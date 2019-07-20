@@ -1,5 +1,5 @@
-<!--사이트 메인 : 연주-->
 <template>
+<!--사이트 메인 : 연주-->
     <div class="homeIntroArea">
         <div class="searchWrap">
             <select name="카테고리">
