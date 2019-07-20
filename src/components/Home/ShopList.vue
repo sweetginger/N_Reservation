@@ -1,11 +1,14 @@
 <template>
-  <div class="shopList">
-    <ul>
-      <li>야호야호 !! ===> {{ shopName }}</li>
-      <li class="hi">매장1</li>
-      <li class="hi">매장2</li>
-      <li class="hi">매장3</li>
-    </ul>
+  <!-- 유림 -->
+  <div class="shopArea">
+    <div class="shopList">
+      <ul>
+        <li class="shopitem">매장1</li>
+        <li class="shopitem">매장2</li>
+        <li class="shopitem">매장3</li>
+        <li class="shopitem">매장4</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -21,7 +24,12 @@ export default {
 </script>
 
 <style scoped>
-.hi {
-  font-size: 10px;
+ul {
+  display: flex;
+}
+.shopList li {
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
 }
 </style>

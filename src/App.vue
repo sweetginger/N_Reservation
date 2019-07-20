@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/shop">Shop</router-link>
+      <router-link to="/yurim">유림</router-link>
     </div>
     <router-view />
   </div>
@@ -27,5 +27,8 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+li {
+  list-style: none;
 }
 </style>
