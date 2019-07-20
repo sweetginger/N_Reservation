@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Shop from "./views/ShopView.vue";
+import Yurim from "./views/YurimView.vue";
 
 Vue.use(Router);
 
@@ -24,9 +24,9 @@ export default new Router({
         import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
     {
-      path: "/shop",
-      name: "Shop",
-      component: Shop
+      path: "/yurim",
+      name: "Yurim",
+      component: Yurim
     }
   ]
 });
