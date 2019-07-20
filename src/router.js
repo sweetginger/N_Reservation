@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Shop from "./views/ShopView.vue";
+import JooView from "./views/JooView.vue";
 
 Vue.use(Router);
 
@@ -27,6 +28,11 @@ export default new Router({
       path: "/shop",
       name: "Shop",
       component: Shop
+    },
+    {
+      path: "/joo",
+      name: "Joo",
+      component: JooView
     }
   ]
 });
