@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/shop">Shop</router-link> |
-      <router-link to="/yurim">유림</router-link>
-      <router-link to="/joo">joo</router-link>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/shop">Shop</router-link>|
+      <router-link to="/yurim">유림</router-link>|
+      <router-link to="/joo">joo</router-link>|
+      <router-link to="/main">네이버예약홈</router-link>
     </div>
     <router-view />
   </div>

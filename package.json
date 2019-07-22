@@ -45,5 +45,17 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "naver reservation project",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweetginger/N_Reservation.git"
+  },
+  "author": "hyr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweetginger/N_Reservation/issues"
+  },
+  "homepage": "https://github.com/sweetginger/N_Reservation#readme"
 }

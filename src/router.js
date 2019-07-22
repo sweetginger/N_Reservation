@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Shop from "./views/ShopView.vue";
 import Yurim from "./views/YurimView.vue";
 import JooView from "./views/JooView.vue";
+import HomeView from "./views/HomeView.vue";
 
 Vue.use(Router);
 
@@ -34,11 +35,16 @@ export default new Router({
       path: "/joo",
       name: "Joo",
       component: JooView
-      
-    },{
+    },
+    {
       path: "/yurim",
       name: "Yurim",
       component: Yurim
+    },
+    {
+      path: "/main",
+      name: "Main",
+      component: HomeView
     }
   ]
 });
