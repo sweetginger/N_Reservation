@@ -1,7 +1,7 @@
 <template>
   <div class="calendarArea">
     <div class="calendarDiv">
-      여기는 지도가 들어갈 공간입니다.
+      달력 공간
     </div>
   </div>
 </template>

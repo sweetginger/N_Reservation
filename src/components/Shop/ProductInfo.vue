@@ -6,6 +6,7 @@
         </div>
         <div class="productInfo">
             상품 소개글
+            
         </div>
     </div>
 </template>
@@ -14,6 +15,8 @@
 export default {
     name:"productInfoArea"
 };
+
+
 </script>
 
 <style scoped>
