@@ -2,8 +2,8 @@
   <!-- 유림 -->
   <div class="homeView">
     <div class="logo">로고영역</div>
-    <HomeIntro />
-    <ShopList />
+    <HomeIntro @setSearch="val => (search = val)" />
+    <ShopList v-if="search == true" />
     <div class="recommendArea">
       <RecommendBanner />
       <RecommendSlider />
@@ -22,6 +22,11 @@ export default {
     ShopList,
     RecommendBanner,
     RecommendSlider
+  },
+  data: function() {
+    return {
+      search: false
+    };
   }
 };
 </script>

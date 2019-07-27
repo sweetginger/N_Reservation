@@ -19,6 +19,16 @@ export default {
     return {
       shopName: "매장이름이에요"
     };
+  },
+  created() {
+    this.getTestList();
+  },
+  methods: {
+    /** 테스트리스트 불러오기 */
+    getTestList: function() {
+      console.log("불러와!");
+      this.$reservationLib.getTest();
+    }
   }
 };
 </script>
