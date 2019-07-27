@@ -39,14 +39,11 @@ export default {};
 
 <style scoped>
 ul {
-  display: flex;
 }
 .myInfoArea div {
   width: 45%;
-  float: left;
 }
 .profile {
-  display: flex;
 }
 .reservationStatus li {
   border: 1px solid;

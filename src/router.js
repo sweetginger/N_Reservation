@@ -5,6 +5,8 @@ import Shop from "./views/ShopView.vue";
 import Yurim from "./views/YurimView.vue";
 import JooView from "./views/JooView.vue";
 import HomeView from "./views/HomeView.vue";
+import ShopView from "./views/ShopView.vue";
+import MyPageView from "./views/MyPageView.vue";
 
 Vue.use(Router);
 
@@ -45,6 +47,16 @@ export default new Router({
       path: "/main",
       name: "Main",
       component: HomeView
+    },
+    {
+      path: "/shop",
+      name: "Shop",
+      component: ShopView
+    },
+    {
+      path: "/myPage",
+      name: "MyPage",
+      component: MyPageView
     }
   ]
 });
