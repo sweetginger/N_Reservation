@@ -30,6 +30,7 @@ ul {
   display: flex;
 }
 .useList li {
+  display: flex-item;
   border: 1px solid;
   padding: 10px;
   margin: 10px;
