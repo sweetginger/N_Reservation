@@ -5,7 +5,7 @@
       <ul>
         <li
           v-for="item in shopList"
-          :key="item.bizInfo"
+          :key="item.bizSeq"
           class="shopitem"
           @click="goShop(item.bizSeq)"
         >
