@@ -9,6 +9,6 @@ export default {};
 
 <style scoped>
 .recommendSliderArea {
-  border: 1px solid;
+  border: 1px solid #bbb;
 }
 </style>

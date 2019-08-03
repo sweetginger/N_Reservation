@@ -12,6 +12,7 @@ import MyInfo from "../components/Mypage/MyInfo.vue";
 import MyUseList from "../components/Mypage/MyUseList.vue";
 import PromotionBanner from "../components/Mypage/PromotionBanner.vue";
 import MyDetailPop from "../components/Mypage/MyDetailPop.vue";
+
 export default {
   components: {
     MyInfo,

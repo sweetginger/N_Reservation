@@ -24,12 +24,28 @@ export default {};
 </script>
 
 <style scoped>
+.reviewArea {
+  margin: 10px auto 0;
+  border: 1px solid #bbb;
+}
+.reviewChart {
+  height: 196px;
+  background-color: #ddd;
+}
+.reviewCategory {
+  height: 150px;
+}
 .reviewCategory ul {
   display: flex;
+  height: 100%;
 }
 .reviewCategory li {
-  border: 1px solid;
-  padding: 5px;
-  margin: 10px;
+  flex: 1 0 auto;
+  border: 1px solid #bbb;
+}
+
+.reviewItem {
+  height: 100px;
+  text-align: left;
 }
 </style>

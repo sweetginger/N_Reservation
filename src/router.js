@@ -1,11 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+// import Home from "./views/Home.vue";
 import Shop from "./views/ShopView.vue";
-import Yurim from "./views/YurimView.vue";
-import JooView from "./views/JooView.vue";
 import HomeView from "./views/HomeView.vue";
 import ShopView from "./views/ShopView.vue";
+import ShopOptionView from "./views/ShopOptionView.vue";
 import MyPageView from "./views/MyPageView.vue";
 
 Vue.use(Router);
@@ -15,33 +14,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
-    },
-    {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    },
-    {
       path: "/shop",
       name: "Shop",
       component: Shop
-    },
-    {
-      path: "/joo",
-      name: "Joo",
-      component: JooView
-    },
-    {
-      path: "/yurim",
-      name: "Yurim",
-      component: Yurim
     },
     {
       path: "/main",
@@ -52,6 +27,11 @@ export default new Router({
       path: "/shop",
       name: "Shop",
       component: ShopView
+    },
+    {
+      path: "/shopOption",
+      name: "ShopOption",
+      component: ShopOptionView
     },
     {
       path: "/myPage",

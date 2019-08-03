@@ -47,4 +47,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.homeIntroArea{
+    width:100%;
+    background-color:#fff;
+    border:1px solid #bbb;
+    margin:auto;
+    height:495px;
+}
+
+
+</style>

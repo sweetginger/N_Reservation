@@ -5,15 +5,6 @@
     <ProductList />
     <ReviewList />
     <ShopLocation />
-    <ProductInfo />
-    <div class="reservationOption">
-      <Calendar />
-      <TimeItem />
-      <ItemOption />
-      <SelectOption />
-      <ItemQty />
-      <ReserverInfo />
-    </div>
   </div>
 </template>
 
@@ -23,13 +14,6 @@ import ShopIntro from "../components/Shop/ShopIntro.vue";
 import ProductList from "../components/Shop/ProductList.vue";
 import ReviewList from "../components/Shop/ReviewList.vue";
 import ShopLocation from "../components/Shop/ShopLocation.vue";
-import ProductInfo from "../components/Shop/ProductInfo.vue";
-import Calendar from "../components/Shop/Calendar.vue";
-import TimeItem from "../components/Shop/TimeItem.vue";
-import ItemOption from "../components/Shop/ItemOption.vue";
-import SelectOption from "../components/Shop/SelectOption.vue";
-import ItemQty from "../components/Shop/ItemQty.vue";
-import ReserverInfo from "../components/Shop/ReserverInfo.vue";
 
 export default {
   components: {
@@ -37,14 +21,7 @@ export default {
     ShopIntro,
     ProductList,
     ReviewList,
-    ShopLocation,
-    ProductInfo,
-    Calendar,
-    TimeItem,
-    ItemOption,
-    SelectOption,
-    ItemQty,
-    ReserverInfo
+    ShopLocation
   },
   data: function() {
     return {
@@ -57,4 +34,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.shopView {
+  width: 1140px;
+  margin: auto;
+}
+</style>

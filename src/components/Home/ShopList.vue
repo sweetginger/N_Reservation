@@ -41,12 +41,24 @@ export default {
 </script>
 
 <style scoped>
+.shopArea {
+  width: 100%;
+  height: 200px;
+  margin: 10px auto 0;
+  border: 1px solid #bbb;
+}
+
+.shopList {
+  height: 180px;
+}
 ul {
   display: flex;
+  padding: 10px;
+  height: 100%;
 }
 .shopList li {
-  border: 1px solid;
+  flex: 1 0 auto;
+  border: 1px solid #bbb;
   padding: 10px;
-  margin: 10px;
 }
 </style>

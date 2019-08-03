@@ -17,22 +17,28 @@ export default {
 </script>
 
 <style scoped>
-    .shopPicArea{
-        width:100%;
-        height:100%;
-        background-color:blueviolet;
-    }
-    .shopPic{
-        float:left;
-        width:50%;
-        height:100px;
-        background-color: blue;
-    }
-    .shopInfo{
-        float:left;
-        width:50%;
-        height:100px;
-        background-color: yellow;
-    }
-    
+.shopPicArea{
+    width:100%;
+    height:495px;
+    background-color:#fff;
+    border:1px solid #bbb;
+}
+.shopPic{
+    float:left;
+    width:50%;
+    height:100%;
+}
+.shopInfo{
+    float:left;
+    width:50%;
+    height:100%;
+    background-color: #ddd;
+}
+
+.shopInfo:after{
+    display:block;
+    clear:both;
+    content:'';
+}
+
 </style>
