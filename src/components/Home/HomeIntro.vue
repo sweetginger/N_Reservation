@@ -10,10 +10,13 @@
       </select>
       <input
         v-model="searchText"
+        class="searchForm"
         type="text"
         placeholder="검색어를 입력해주세요."
       />
-      <button @click="goSearch()"><i class="fas fa-search"></i></button>
+      <button class="search" @click="goSearch()">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
     <div class="mainImg">
       메인 홍보 이미지
@@ -48,13 +51,31 @@ export default {
 </script>
 
 <style scoped>
-.homeIntroArea{
-    width:100%;
-    background-color:#fff;
-    border:1px solid #bbb;
-    margin:auto;
-    height:495px;
+.homeIntroArea {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  margin: auto;
+  height: 495px;
 }
 
+.searchWrap {
+  display: flex;
+  padding: 5px 10px;
+  height: 50px;
+}
 
+.searchForm {
+  flex: 4 0 auto;
+  margin-left: 5px;
+}
+.search {
+  width: 50px;
+  height: 100%;
+  background: #00c73c;
+}
+.fa-search {
+  font-size: 20px;
+  color: #fff;
+}
 </style>

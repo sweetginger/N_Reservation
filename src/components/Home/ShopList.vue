@@ -53,22 +53,23 @@ export default {
 <style scoped>
 .shopArea {
   width: 100%;
-  height: 200px;
   margin: 10px auto 0;
   border: 1px solid #bbb;
+  padding: 10px;
 }
 
-.shopList {
-  height: 180px;
-}
-ul {
-  display: flex;
-  padding: 10px;
-  height: 100%;
-}
 .shopList li {
-  flex: 1 0 auto;
+  float: left;
   border: 1px solid #bbb;
   padding: 10px;
+  width: calc(100% / 5);
+  height: 200px;
+}
+
+.shopList li:after,
+.shopList:after {
+  display: block;
+  content: "";
+  clear: both;
 }
 </style>

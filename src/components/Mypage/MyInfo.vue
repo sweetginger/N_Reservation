@@ -17,15 +17,17 @@
           <span>26</span>
         </li>
         <li class="statusItem">
-          <span class="title">이용예정</span>
+          <span class="title"><i class="far fa-calendar-alt"></i>이용예정</span>
           <span>1</span>
         </li>
         <li class="statusItem">
-          <span class="title">이용완료</span>
+          <span class="title"
+            ><i class="far fa-calendar-check"></i>이용완료</span
+          >
           <span>12</span>
         </li>
         <li class="statusItem">
-          <span class="title">취소환불</span>
+          <span class="title"><i class="fas fa-undo"></i>취소환불</span>
           <span>2</span>
         </li>
       </ul>
@@ -38,16 +40,29 @@ export default {};
 </script>
 
 <style scoped>
-ul {
-}
-.myInfoArea div {
-  width: 45%;
+.myInfoArea {
+  display: flex;
+  border: 1px solid #bbb;
+  height: 136px;
 }
 .profile {
+  flex: 1 0 auto;
 }
-.reservationStatus li {
-  border: 1px solid;
+
+.reservationStatus {
+  flex: 1 0 auto;
   padding: 10px;
-  margin: 10px;
+}
+.reservationStatus ul {
+  display: flex;
+  height: 100%;
+}
+.statusItem {
+  flex: 1 0 auto;
+  border-right: 1px solid #bbb;
+  padding: 10px;
+}
+.statusItem:last-child {
+  border-right: none;
 }
 </style>

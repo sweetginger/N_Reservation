@@ -16,17 +16,16 @@ export default {
 <style scoped>
 .myDetailPopArea {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding-top: 100px;
   background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
 }
 
 .myDetail {
-  width: 200px;
-  height: 800px;
+  width: 430px;
   margin: auto;
   background: #fff;
 }
