@@ -3,7 +3,12 @@
   <div class="shopArea">
     <div class="shopList">
       <ul>
-        <li v-for="item in shopList" :key="item.bizSeq" class="shopitem">
+        <li
+          v-for="item in shopList"
+          :key="item.bizSeq"
+          class="shopitem"
+          @click="goShop(item.bizSeq)"
+        >
           <img src="" />
           <p>{{ item.bizName }}</p>
           <p>{{ item.bizSimpleDes }}</p>
@@ -14,6 +19,7 @@
 </template>
 
 <script>
+import router from "@/router";
 export default {
   name: "ShopList",
   data: function() {
@@ -35,6 +41,10 @@ export default {
     /** 매장 리스트 불러오기 */
     getShopList: async function() {
       this.shopList = await this.$reservationLib.getShopList();
+    },
+    /** 매장 페이지로 연결 */
+    goShop: function(reqSeq) {
+      router.push(`/shop/${reqSeq}`);
     }
   }
 };
