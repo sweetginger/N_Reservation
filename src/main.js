@@ -8,9 +8,15 @@ import axios from "axios";
 import * as reservationLib from "@/lib/Reservation.js";
 Vue.prototype.$reservationLib = reservationLib;
 
+/** vue carousel */
+import VueCarousel from "@chenfengyuan/vue-carousel";
+Vue.use(VueCarousel);
+Vue.component(VueCarousel.name, VueCarousel);
+
 Vue.config.productionTip = false;
 
 new Vue({
+  VueCarousel,
   router,
   store,
   axios,
