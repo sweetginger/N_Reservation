@@ -3,10 +3,11 @@
   <div class="shopArea">
     <div class="shopList">
       <ul>
-        <li class="shopitem">매장1</li>
-        <li class="shopitem">매장2</li>
-        <li class="shopitem">매장3</li>
-        <li class="shopitem">매장4</li>
+        <li v-for="item in shopList" :key="item.bizSeq" class="shopitem">
+          <img src="" />
+          <p>{{ item.bizName }}</p>
+          <p>{{ item.bizSimpleDes }}</p>
+        </li>
       </ul>
     </div>
   </div>
@@ -17,17 +18,23 @@ export default {
   name: "ShopList",
   data: function() {
     return {
-      shopName: "매장이름이에요"
+      shopName: "매장이름이에요",
+      shopList: []
     };
   },
   created() {
     this.getTestList();
+    this.getShopList();
   },
   methods: {
     /** 테스트리스트 불러오기 */
     getTestList: function() {
       console.log("불러와!");
       this.$reservationLib.getTest();
+    },
+    /** 매장 리스트 불러오기 */
+    getShopList: async function() {
+      this.shopList = await this.$reservationLib.getShopList();
     }
   }
 };
