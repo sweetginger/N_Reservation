@@ -16,6 +16,9 @@ export default {};
 </script>
 
 <style scoped>
+.naviArea {
+  height: 40px;
+}
 ul {
   display: flex;
 }

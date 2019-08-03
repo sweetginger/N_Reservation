@@ -2,9 +2,7 @@
   <div class="selectOptionArea">
     <div class="selectOptionList">
       <ul>
-        <li class="optionItem">옵션1</li>
-        <li class="optionItem">옵션2</li>
-        <li class="optionItem">옵션3</li>
+        <li class="optionItem">옵션</li>
       </ul>
     </div>
     <div class="total">합계 : {{ totalValue }}</div>
@@ -23,8 +21,8 @@ export default {
 </script>
 
 <style scoped>
-.selectOptionList {
-  border: 1px steelblue solid;
+.selectOptionArea {
+  border: 1px red solid;
 }
 .total {
   background-color: yellow;
