@@ -5,13 +5,13 @@
       <ul>
         <li
           v-for="item in shopList"
-          :key="item.bizSeq"
+          :key="item.bizInfo"
           class="shopitem"
           @click="goShop(item.bizSeq)"
         >
-          <img src="" />
-          <p>{{ item.bizName }}</p>
-          <p>{{ item.bizSimpleDes }}</p>
+          <img :src="item.bizImageList[0]" />
+          <p>{{ item.bizInfo.bizName }}</p>
+          <p>{{ item.bizInfo.bizSimpleDes }}</p>
         </li>
       </ul>
     </div>
