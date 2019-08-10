@@ -14,7 +14,7 @@
 
 <script>
 import ProductInfo from "../components/ShopOption/ProductInfo.vue";
-import Calendar from "@/components/Calendar/ToastCalendar";
+import Calendar from "@/components/ShopOption/Calendar";
 import TimeItem from "../components/ShopOption/TimeItem.vue";
 import ItemOption from "../components/ShopOption/ItemOption.vue";
 import SelectOption from "../components/ShopOption/SelectOption.vue";

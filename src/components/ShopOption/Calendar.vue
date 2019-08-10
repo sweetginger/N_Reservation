@@ -1,7 +1,12 @@
 <template>
   <div class="calendarArea">
     <div class="calendarDiv">
-      <Datepicker :value="date" />
+      <Datepicker
+        v-modal="pickDate"
+        :value="defaultDate"
+        :inline="true"
+        @change="val => setPickDate(val)"
+      />
     </div>
   </div>
 </template>
@@ -15,8 +20,14 @@ export default {
   },
   data: function() {
     return {
-      date: new Date()
+      defaultDate: new Date(),
+      pickDate: ""
     };
+  },
+  methods: {
+    setPickDate: function(val) {
+      this.$emit("setPickDate", val);
+    }
   }
 };
 </script>
