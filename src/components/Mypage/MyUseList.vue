@@ -4,8 +4,8 @@
       <p class="useTitle">내 예약</p>
       <ul>
         <li v-for="item in reservationList" :key="item.userSeq" class="useItem">
-          <p class="reservationNum">{{ item.reservationSeq }}</p>
-          <p class="optionSeq">이용한 상품 : {{ item.optionSeq }}</p>
+          <p class="reservationNum">No.{{ item.reservationSeq }}</p>
+          <p class="productName">이용한 상품 : {{ item.productName }}</p>
           <p class="bizSeq">{{ item.bizSeq }}</p>
           <p class="reservationNum">예약 일시 : {{ item.payDate }}</p>
           <p class="payType">결제방법 : {{ item.payType }}</p>
@@ -31,10 +31,7 @@ export default {
   },
   methods: {
     getUseList: async function() {
-      this.reservationList = await this.$reservationLib.getUseList(
-        // this.$route.params.userSeq
-        1
-      );
+      this.reservationList = await this.$reservationLib.getUseList(1);
     }
   }
   // components: { pageBar }
