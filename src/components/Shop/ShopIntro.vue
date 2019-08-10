@@ -2,6 +2,7 @@
   <!--매장 소개 : 연주-->
   <div class="shopPicArea">
     <div class="shopPic">
+      매장 사진 영역
       <!-- <Slider></Slider> -->
     </div>
     <div class="shopInfo">

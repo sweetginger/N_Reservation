@@ -31,4 +31,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.myPageView {
+  width: 1140px;
+  margin: auto;
+}
+</style>

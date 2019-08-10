@@ -4,9 +4,10 @@
 import axios from "axios";
 
 const config = {
-  baseUrl: "http://172.30.1.28:8090",
+  baseUrl: "http://172.30.1.28:2902",
   reservation: "",
   biz: "/biz",
+  review: "/board/reviews"
   product: "/product"
 };
 
@@ -47,6 +48,31 @@ function getShopList() {
     });
 }
 
+/** 매장 리뷰 리스트 받아오기 */
+function getReviewList(bizSeq) {
+  return axios
+    .get(`${config.baseUrl + config.review}/${bizSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+
+/** 매장별 상품 리스트 받아오기 */
+function getProductList(bizSeq) {
+  return axios
+    .get(`${config.baseUrl + config.review}/${bizSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
 /** 상품목록 받아오기 */
 function getProductList(reqSeq) {
   return axios

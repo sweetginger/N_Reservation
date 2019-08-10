@@ -7,9 +7,9 @@
       <router-link to="/shop">Shop</router-link>|
       <router-link to="/yurim">유림</router-link>|
       <router-link to="/joo">joo</router-link>| -->
-      <router-link to="/main">홈</router-link>|
-      <router-link to="/shop">매장뷰</router-link>|
-      <router-link to="/shopOption">매장옵션뷰</router-link>|
+      <router-link to="/main">홈</router-link>
+      <router-link to="/shop">매장뷰</router-link>
+      <router-link to="/shopOption">매장옵션뷰</router-link>
       <router-link to="/myPage">마이페이지</router-link>
     </div>
     <router-view />
@@ -25,19 +25,18 @@
 }
 #nav {
   position: absolute;
-  right: 0;
+  right: 20px;
 }
 
 #nav a {
+  display: block;
   font-weight: bold;
   color: #2c3e50;
+  text-align: right;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
-li {
-  list-style: none;
 }
 
 /* 네이버 예약 프로젝트 홈 전역 스타일 */
@@ -47,6 +46,9 @@ li {
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  vertical-align: top;
+  list-style: none;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 #app {
@@ -58,5 +60,14 @@ header {
   height: 57px;
   background-color: #03c75a;
   margin-bottom: 20px;
+}
+
+input,
+select {
+  padding: 5px 15px;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  font-size: 13px;
+  color: #000;
 }
 </style>

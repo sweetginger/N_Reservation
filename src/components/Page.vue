@@ -12,6 +12,7 @@ export default {
 
 <style scoped>
 .pageArea {
-  border: 1px red solid;
+  border: 1px solid #ddd;
+  margin-top: 10px;
 }
 </style>
