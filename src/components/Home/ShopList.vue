@@ -9,7 +9,14 @@
           class="shopitem"
           @click="goShop(item.bizSeq)"
         >
-          <img :src="item.bizImageList[0]" />
+          <p v-for="img in item.bizImageList" :key="img.imgSeq">
+            <span v-if="img.imgSeq == 0">
+              <img :src="img.imgPath" />
+            </span>
+          </p>
+          <!-- <img :src="item.bizImageList[0].imgPath" /> -->
+          <!-- <p>{{ item.bizImageList[0].imgSeq }}</p> -->
+          <!-- <img :src="item.productImageList[0].imgPath" /> -->
           <p>{{ item.bizInfo.bizName }}</p>
           <p>{{ item.bizInfo.bizSimpleDes }}</p>
         </li>
@@ -29,15 +36,9 @@ export default {
     };
   },
   created() {
-    this.getTestList();
     this.getShopList();
   },
   methods: {
-    /** 테스트리스트 불러오기 */
-    getTestList: function() {
-      console.log("불러와!");
-      this.$reservationLib.getTest();
-    },
     /** 매장 리스트 불러오기 */
     getShopList: async function() {
       this.shopList = await this.$reservationLib.getShopList();

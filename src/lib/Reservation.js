@@ -8,9 +8,10 @@ const config = {
   reservation: "",
   biz: "/biz",
   review: "/board/reviews"
+  product: "/product"
 };
 
-/** test api : 아무거나 테스트 */
+/** test api : 아무거나 테스트 -- 안씀 */
 function getTest() {
   return axios
     .get(`${config.baseUrl}/test`)
@@ -64,6 +65,18 @@ function getReviewList(bizSeq) {
 function getProductList(bizSeq) {
   return axios
     .get(`${config.baseUrl + config.review}/${bizSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+/** 상품목록 받아오기 */
+function getProductList(reqSeq) {
+  return axios
+    .get(`${config.baseUrl + config.product}/products/${reqSeq}`)
     .then(response => {
       return response.data;
     })
