@@ -9,6 +9,7 @@ const config = {
   biz: "/biz",
   review: "/board/reviews",
   product: "/product",
+  option: "/product/options",
   myUse: "/myPage/history"
 };
 
@@ -87,6 +88,18 @@ function getProductList(reqSeq) {
     });
 }
 
+function getOptions(productSeq) {
+  return axios
+    .get(`${config.baseUrl + config.option}/${productSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+
 /** 마이페이지 내가 사용/예약한 내역 목록 받아오기 */
 function getUseList(userSeq) {
   return axios
@@ -99,11 +112,13 @@ function getUseList(userSeq) {
       return [];
     });
 }
+
 export {
   getTest,
   loginAuth,
   getShopList,
   getProductList,
   getReviewList,
+  getOptions,
   getUseList
 };

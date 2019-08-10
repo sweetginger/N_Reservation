@@ -10,7 +10,7 @@
           v-for="item in productList"
           :key="item.productSeq"
           class="productItem"
-          @click="goProduct(item.prouctSeq)"
+          @click="goProduct(item.productSeq)"
         >
           <img :src="item.productImageList[0].imgPath" />
           <p>{{ item.product.productName }}</p>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-// import router from "@/router";
+import router from "@/router";
 export default {
   name: "ProductList",
   data: function() {
@@ -32,6 +32,7 @@ export default {
     };
   },
   created: function() {
+    // alert("test");
     this.getProductList();
   },
   methods: {
@@ -39,6 +40,10 @@ export default {
       this.productList = await this.$reservationLib.getProductList(
         this.$route.params.bizSeq
       );
+    },
+
+    goProduct: function(productSeq) {
+      router.push(`/shopOption/${productSeq}`);
     }
   }
 };
