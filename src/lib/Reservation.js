@@ -4,11 +4,12 @@
 import axios from "axios";
 
 const config = {
-  baseUrl: "http://172.30.1.28:2902",
+  baseUrl: "http://192.168.100.101:2902",
   reservation: "",
   biz: "/biz",
   review: "/board/reviews",
-  product: "/product"
+  product: "/product",
+  option: "/product/options"
 };
 
 /** test api : 아무거나 테스트 -- 안씀 */
@@ -62,17 +63,17 @@ function getReviewList(bizSeq) {
 }
 
 /** 매장별 상품 리스트 받아오기 */
-function getProductList(bizSeq) {
-  return axios
-    .get(`${config.baseUrl + config.review}/${bizSeq}`)
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => {
-      console.log(error);
-      return [];
-    });
-}
+// function getProductList(bizSeq) {
+//   return axios
+//     .get(`${config.baseUrl + config.review}/${bizSeq}`)
+//     .then(response => {
+//       return response.data;
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       return [];
+//     });
+// }
 /** 상품목록 받아오기 */
 function getProductList(reqSeq) {
   return axios
@@ -86,4 +87,23 @@ function getProductList(reqSeq) {
     });
 }
 
-export { getTest, loginAuth, getShopList, getProductList };
+function getOptions(productSeq) {
+  return axios
+    .get(`${config.baseUrl + config.option}/${productSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+
+export {
+  getTest,
+  loginAuth,
+  getShopList,
+  getProductList,
+  getReviewList,
+  getOptions
+};
