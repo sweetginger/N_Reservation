@@ -2,10 +2,10 @@
   <div class="shopOptionView">
     <ProductInfo />
     <div class="reservationOption">
-      <Calendar />
+      <Calendar @setPickDate="val => (pickDate = val)" />
       <TimeItem />
       <ItemOption />
-      <SelectOption />
+      <SelectOption :pick-date="pickDate" />
       <ItemQty />
       <ReserverInfo />
     </div>
@@ -22,6 +22,7 @@ import ItemQty from "../components/ShopOption/ItemQty.vue";
 import ReserverInfo from "../components/ShopOption/ReserverInfo.vue";
 
 export default {
+  name: "ShopOptionView",
   components: {
     ProductInfo,
     Calendar,
@@ -33,7 +34,8 @@ export default {
   },
   data: function() {
     return {
-      name: ""
+      /** 데이트피커 날짜 값 */
+      pickDate: ""
     };
   },
   methods: {

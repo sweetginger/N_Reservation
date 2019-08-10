@@ -2,7 +2,8 @@
   <div class="selectOptionArea">
     <div class="selectOptionList">
       <ul>
-        <li class="optionItem">옵션</li>
+        <li class="title">날짜</li>
+        <li>{{ pickDate }}</li>
       </ul>
     </div>
     <div class="total">합계 : {{ totalValue }}</div>
@@ -12,6 +13,12 @@
 <script>
 export default {
   name: "SelectOptionArea",
+  props: {
+    pickDate: {
+      type: String,
+      default: ""
+    }
+  },
   data: function() {
     return {
       totalValue: 15
