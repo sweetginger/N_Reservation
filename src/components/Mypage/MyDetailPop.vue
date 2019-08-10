@@ -19,9 +19,10 @@ export default {
   height: 100%;
   padding-top: 100px;
   background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
+  display: none;
 }
 
 .myDetail {

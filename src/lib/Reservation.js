@@ -9,7 +9,11 @@ const config = {
   biz: "/biz",
   review: "/board/reviews",
   product: "/product",
+<<<<<<< HEAD
   option: "/product/options"
+=======
+  myUse: "/myPage/history"
+>>>>>>> 80d421a19483ad85b612594fa7b5db4273266b53
 };
 
 /** test api : 아무거나 테스트 -- 안씀 */
@@ -99,11 +103,27 @@ function getOptions(productSeq) {
     });
 }
 
+
+
+/** 마이페이지 내가 사용/예약한 내역 목록 받아오기 */
+function getUseList(userSeq) {
+  return axios
+    .get(`${config.baseUrl + config.myUse}/${userSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+
 export {
   getTest,
   loginAuth,
   getShopList,
   getProductList,
   getReviewList,
-  getOptions
+  getOptions,
+  getUseList
 };

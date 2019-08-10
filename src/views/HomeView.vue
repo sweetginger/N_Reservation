@@ -8,7 +8,7 @@
       <RecommendSlider />
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 import HomeIntro from "../components/Home/HomeIntro";

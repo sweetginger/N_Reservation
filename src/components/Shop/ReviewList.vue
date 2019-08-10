@@ -22,6 +22,8 @@
 </template>
 
 <script>
+// import router from "@/router";
+
 export default {
   name: "ReviewList",
   data: function() {
