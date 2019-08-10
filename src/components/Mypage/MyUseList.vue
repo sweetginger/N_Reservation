@@ -3,10 +3,14 @@
     <div class="useList">
       <p class="useTitle">내 예약</p>
       <ul>
-        <li class="useList">정보</li>
-        <li class="useList">정보1</li>
-        <li class="useList">정보2</li>
-        <li class="useList">정보3</li>
+        <li v-for="item in reservationList" :key="item.userSeq" class="useItem">
+          <p class="reservationNum">{{ item.reservationSeq }}</p>
+          <p class="optionSeq">이용한 상품 : {{ item.optionSeq }}</p>
+          <p class="bizSeq">{{ item.bizSeq }}</p>
+          <p class="reservationNum">예약 일시 : {{ item.payDate }}</p>
+          <p class="payType">결제방법 : {{ item.payType }}</p>
+          <p class="price">가격 : 얼마얼마</p>
+        </li>
       </ul>
     </div>
     <pageBar></pageBar>
@@ -14,11 +18,26 @@
 </template>
 
 <script>
-import pageBar from "../Page";
-
+// import pageBar from "../Page";
 export default {
   name: "MyUseListArea",
-  components: { pageBar }
+  data: function() {
+    return {
+      reservationList: []
+    };
+  },
+  created() {
+    this.getUseList();
+  },
+  methods: {
+    getUseList: async function() {
+      this.reservationList = await this.$reservationLib.getUseList(
+        // this.$route.params.userSeq
+        1
+      );
+    }
+  }
+  // components: { pageBar }
 };
 </script>
 

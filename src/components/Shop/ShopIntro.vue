@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Slider from "../Slider/Slider";
+// import Slider from "../Slider/Slider";
 
 export default {
   name: "ShopIntro",
