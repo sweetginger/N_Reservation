@@ -1,7 +1,6 @@
 <template>
   <!-- 유림 -->
   <div class="homeView">
-    <div class="logo">로고영역</div>
     <HomeIntro @setSearch="val => (search = val)" />
     <ShopList v-if="search == true" />
     <div class="recommendArea">
@@ -32,8 +31,16 @@ export default {
 </script>
 
 <style scoped>
+.homeView {
+  width: 1140px;
+  margin: auto;
+}
 .recommendArea {
   display: flex;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #bbb;
+  margin: 10px auto 0;
 }
 .recommendArea div {
   width: 50%;

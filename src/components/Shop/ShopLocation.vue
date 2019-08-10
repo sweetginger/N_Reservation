@@ -14,17 +14,18 @@ export default {
 
 <style scoped>
 .locationArea {
-  border: 1px red solid;
+  border: 1px solid #bbb;
   display: flex;
+  height: 550px;
+  margin: 10px auto 0;
 }
 
 .locationMap {
-  border: 1px green solid;
-  width: 50%;
+  flex: 1 0 auto;
+  background-color: #ddd;
 }
 
 .locationInfo {
-  border: 1px blue solid;
-  width: 50%;
+  flex: 1 0 auto;
 }
 </style>
