@@ -3,6 +3,7 @@
   <div class="shopPicArea">
     <div class="shopPic">
       매장 사진 영역
+      <!-- <Slider></Slider> -->
     </div>
     <div class="shopInfo">
       매장 소개 글 영역
@@ -11,8 +12,13 @@
 </template>
 
 <script>
+import Slider from "../Slider/Slider";
+
 export default {
-  name: "ShopPicArea"
+  name: "ShopIntro",
+  components: {
+    // Slider
+  }
 };
 </script>
 
