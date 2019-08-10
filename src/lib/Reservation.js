@@ -7,7 +7,7 @@ const config = {
   baseUrl: "http://172.30.1.28:2902",
   reservation: "",
   biz: "/biz",
-  review: "/board/reviews"
+  review: "/board/reviews",
   product: "/product"
 };
 
