@@ -1,15 +1,23 @@
 <template>
   <div class="calendarArea">
     <div class="calendarDiv">
-      달력 공간
+      <Datepicker :value="date" />
     </div>
-    div.
   </div>
 </template>
 
 <script>
+import Datepicker from "vuejs-datepicker";
 export default {
-  name: "CalendarArea"
+  name: "CalendarArea",
+  components: {
+    Datepicker
+  },
+  data: function() {
+    return {
+      date: new Date()
+    };
+  }
 };
 </script>
 
