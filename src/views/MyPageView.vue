@@ -3,7 +3,7 @@
     <MyInfo />
     <MyUseList />
     <PromotionBanner />
-    <MyDetailPop />
+    <!-- <MyDetailPop /> -->
   </div>
 </template>
 
@@ -11,14 +11,14 @@
 import MyInfo from "../components/Mypage/MyInfo.vue";
 import MyUseList from "../components/Mypage/MyUseList.vue";
 import PromotionBanner from "../components/Mypage/PromotionBanner.vue";
-import MyDetailPop from "../components/Mypage/MyDetailPop.vue";
+// import MyDetailPop from "../components/Mypage/MyDetailPop.vue";
 
 export default {
   components: {
     MyInfo,
     MyUseList,
-    PromotionBanner,
-    MyDetailPop
+    PromotionBanner
+    // MyDetailPop
   },
   data: function() {
     return {
