@@ -1,7 +1,14 @@
 <template>
   <div class="reviewWriteFormArea">
     <p>(상품이미지)</p>
-    <p>(상품명) - (옵션명)</p>
+    <p>
+      {{ product.productName }} -
+      <span
+        v-for="(item, idx) in product.reservationDetailList"
+        :key="item.optionSeq"
+        ><span v-if="idx > 0">, </span>{{ item.optionName }}
+      </span>
+    </p>
     <p>(예약날짜) 방문</p>
     <div class="starArea">
       <span class="star_1 active" @click="calcStarPoint(1)"
@@ -45,6 +52,12 @@
 <script>
 export default {
   name: "ReviewWriteForm",
+  props: {
+    product: {
+      type: Object,
+      default: null
+    }
+  },
   data: function() {
     return {
       reviewContent: "",
@@ -57,10 +70,11 @@ export default {
       await this.$reservationLib
         .addReview({
           reviewContent: this.reviewContent,
-          bizSeq: 2,
-          userSeq: 2,
-          optionSeq: 2,
-          productSeq: 2,
+          bizSeq: this.product.bizSeq,
+          userSeq: 0,
+          optionSeq: this.product.reservationSeq,
+          reservationSeq: this.product.reservationSeq,
+          productSeq: this.product.productSeq,
           starPoint: this.starPoint
         })
         .then(() => {
@@ -103,6 +117,8 @@ export default {
 .addBtn {
   background: #03c75a;
   padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
 }
 .starArea {
   margin: 20px 0;

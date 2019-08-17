@@ -36,7 +36,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MyInfo",
+  props: {
+    /** 예약현황정보 */
+    reservationInfo: {
+      type: Object,
+      default: null
+    }
+  }
+};
 </script>
 
 <style scoped>

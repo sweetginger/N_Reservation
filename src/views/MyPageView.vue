@@ -1,7 +1,7 @@
 <template>
   <div class="myPageView">
-    <MyInfo />
-    <MyUseList />
+    <MyInfo :reservation-info="reservationInfo" />
+    <MyUseList @setReservationInfo="obj => (reservationInfo = obj)" />
     <PromotionBanner />
     <!-- <MyDetailPop /> -->
   </div>
@@ -22,7 +22,9 @@ export default {
   },
   data: function() {
     return {
-      name: ""
+      name: "MyPageView",
+      /** 예약 리스트 */
+      reservationInfo: []
     };
   },
   methods: {

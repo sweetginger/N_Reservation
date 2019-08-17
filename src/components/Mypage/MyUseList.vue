@@ -41,6 +41,31 @@ export default {
       selectedUse: 0
     };
   },
+  watch: {
+    reservationList: function(newVal) {
+      // 마이페이지뷰에 예약리스트 올려주기
+      let preCnt = 0;
+      let cancelCnt = 0;
+      let okCnt = 0;
+      this.reservationList.reduce(function(preObj, curObj) {
+        if (curObj.useCd == "wait") {
+          preCnt += 1;
+        }
+        if (curObj.useCd == "cancel") {
+          cancelCnt += 1;
+        }
+        if (curObj.useCd == "ok") {
+          okCnt += 1;
+        }
+      });
+      this.$emit("setReservationInfo", {
+        totalCnt: this.reservationList.length,
+        preCnt,
+        cancelCnt,
+        okCnt
+      });
+    }
+  },
   created() {
     this.getUseList();
   },

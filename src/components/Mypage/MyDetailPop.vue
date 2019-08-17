@@ -11,14 +11,21 @@
         <p class="payType">결제방법 : {{ selectedUse.payType }}</p>
         <p class="totalPrice">가격 : {{ selectedUse.totalPrice }}</p>
       </div>
-      <button class="reviewBtn">리뷰쓰기</button>
+      <button v-if="!showReviewForm" class="reviewBtn" @click="showReview()">
+        리뷰쓰기
+      </button>
+      <ReviewWriteForm v-else :product="selectedUse" />
     </div>
   </div>
 </template>
 
 <script>
+import ReviewWriteForm from "@/components/Mypage/ReviewWriteForm";
 export default {
   name: "MyDetailPopArea",
+  components: {
+    ReviewWriteForm
+  },
   props: {
     /** 넘겨받은 예약번호 */
     selectedUse: {
@@ -27,7 +34,10 @@ export default {
   },
   data: function() {
     return {
-      togglePopOn: true
+      /** 팝업 활성화 상태 */
+      togglePopOn: true,
+      /** 후기작성폼 활성화 상태 */
+      showReviewForm: false
     };
   },
   created: function() {
@@ -38,9 +48,13 @@ export default {
       this.togglePopOn = false;
       this.$emit("detailPopClose");
     },
-    getSelectUse: async function() {
-      const useList = await this.$reservationLib.getUseList(this.selectedUse);
-      this.selectedUse = useList;
+    // getSelectUse: async function() {
+    //   const useList = await this.$reservationLib.getUseList(this.selectedUse);
+    //   this.selectedUse = useList;
+    // },
+    /** 후기작성폼 활성화 */
+    showReview: function() {
+      this.showReviewForm = !this.showReviewForm;
     }
   }
 };
