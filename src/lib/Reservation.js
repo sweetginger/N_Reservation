@@ -113,6 +113,20 @@ function getOptions(productSeq) {
     });
 }
 
+// 2019-08-17 배재현 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+function getProductInfo(productSeq) {
+  return axios
+    .get(`${config.baseUrl + config.product}/product/${productSeq}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+// 2019-08-17 배재현  E N D=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 /** 마이페이지 내가 사용/예약한 내역 목록 받아오기 */
 function getUseList(userSeq) {
   return axios
@@ -134,5 +148,6 @@ export {
   getProductList,
   getReviewList,
   getOptions,
-  getUseList
+  getUseList,
+  getProductInfo
 };

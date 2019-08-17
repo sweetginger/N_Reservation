@@ -3,10 +3,12 @@
     <ProductInfo />
     <div class="reservationOption">
       <Calendar @setPickDate="val => (pickDate = val)" />
-      <TimeItem />
-      <ItemOption />
-      <SelectOption :pick-date="pickDate" />
-      <ItemQty />
+      <TimeItem @setPickTime="val => (pickTime = val)" />
+      <SelectOption :pick-date="pickDate" :pick-time="pickTime" />
+      <ItemOption @selectOptions="val => (selectList = val)" />
+      <!-- <ItemOption @selectOptions="val => refItemQty(val)" /> -->
+      <!-- <ItemQty ref="itemQty" :select-option="selectList" /> -->
+      <ItemQty :select-option="selectList" />
       <ReserverInfo />
     </div>
   </div>
@@ -35,11 +37,17 @@ export default {
   data: function() {
     return {
       /** 데이트피커 날짜 값 */
-      pickDate: ""
+      pickDate: "",
+      pickTime: "",
+      selectList: []
     };
   },
   methods: {
     goMain: function() {}
+    // ,
+    // refItemQty(val) {
+    //   this.$refs.itemQty.testzz(val);
+    // }
   }
 };
 </script>
