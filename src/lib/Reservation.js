@@ -4,7 +4,7 @@
 import axios from "axios";
 
 const config = {
-  baseUrl: "http://192.168.100.101:2902",
+  baseUrl: "http://192.168.34.199:2902",
   reservation: "",
   biz: "/biz",
   review: "/board/reviews",
