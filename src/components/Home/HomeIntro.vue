@@ -19,14 +19,19 @@
       </button>
     </div>
     <div class="mainImg">
-      메인 홍보 이미지
+      <!-- <AgileSlider></AgileSlider> -->
     </div>
   </div>
 </template>
 
 <script>
+import AgileSlider from "@/components/Slider/AgileSlider";
+
 export default {
   name: "HomeIntroArea",
+  components: {
+    AgileSlider
+  },
   data: function() {
     return {
       searchText: ""

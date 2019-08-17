@@ -3,27 +3,42 @@
     <div class="useList">
       <p class="useTitle">내 예약</p>
       <ul>
-        <li v-for="item in reservationList" :key="item.userSeq" class="useItem">
+        <li
+          v-for="item in reservationList"
+          :key="item.userSeq"
+          class="useItem"
+          @click="togglePopUp(item)"
+        >
           <p class="reservationNum">{{ item.reservationSeq }}</p>
-          <p class="optionSeq">이용한 상품 : {{ item.optionSeq }}</p>
+          <p class="bizName">매장명 : {{ item.bizName }}</p>
           <p class="bizSeq">{{ item.bizSeq }}</p>
           <p class="reservationNum">예약 일시 : {{ item.payDate }}</p>
           <p class="payType">결제방법 : {{ item.payType }}</p>
-          <p class="price">가격 : 얼마얼마</p>
+          <p class="totalPrice">가격 : {{ item.totalPrice }}</p>
         </li>
       </ul>
     </div>
-    <pageBar></pageBar>
+    <toggle-pop-on
+      v-if="togglePopOn == true"
+      :selected-use="selectedUse"
+      @detailPopClose="closeBtn()"
+    ></toggle-pop-on>
+    <!-- <pageBar></pageBar> -->
   </div>
 </template>
 
 <script>
+import togglePopOn from "./MyDetailPop.vue";
 // import pageBar from "../Page";
 export default {
   name: "MyUseListArea",
+  components: { togglePopOn },
   data: function() {
     return {
-      reservationList: []
+      reservationList: [],
+      togglePopOn: false,
+      /** 선택한 예약 번호  */
+      selectedUse: 0
     };
   },
   created() {
@@ -32,9 +47,16 @@ export default {
   methods: {
     getUseList: async function() {
       this.reservationList = await this.$reservationLib.getUseList(
-        // this.$route.params.userSeq
+        // TODO :: 로그인 유저 번호 넣기
         1
       );
+    },
+    togglePopUp: function(reservationObj) {
+      this.selectedUse = reservationObj;
+      this.togglePopOn = true;
+    },
+    closeBtn: function() {
+      this.togglePopOn = false;
     }
   }
   // components: { pageBar }

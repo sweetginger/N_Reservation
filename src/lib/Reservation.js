@@ -76,6 +76,21 @@ function getReviewList(bizSeq) {
     });
 }
 
+/** 리뷰 등록 */
+function addReview(reqObj) {
+  return axios
+    .post(`${config.baseUrl}/board/save`, reqObj)
+    .then(response => {
+      alert("리뷰가 등록되었습니다.");
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      alert("리뷰 등록에 실패하였습니다.");
+      return [];
+    });
+}
+
 /** 매장별 상품 리스트 받아오기 */
 // function getProductList(bizSeq) {
 //   return axios
@@ -101,6 +116,7 @@ function getProductList(reqSeq) {
     });
 }
 
+/** 옵션 받아오기 */
 function getOptions(productSeq) {
   return axios
     .get(`${config.baseUrl + config.option}/${productSeq}`)
@@ -147,6 +163,7 @@ export {
   getShop,
   getProductList,
   getReviewList,
+  addReview,
   getOptions,
   getUseList,
   getProductInfo
