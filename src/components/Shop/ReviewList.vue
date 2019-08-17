@@ -10,11 +10,18 @@
       </ul>
     </div> -->
     <div class="reviewList">
-      <ul>
-        <li v-for="item in reviewList" :key="item.bizSeq" class="reviewItem">
+      <ul v-if="reviewList.length">
+        <li v-for="item in reviewList" :key="item.reviewSeq" class="reviewItem">
           <p class="reviewText">{{ item.reviewContent }}</p>
           <p class="productName">이용한 상품명 : {{ item.productName }}</p>
           <p class="starPoint">별점 : {{ item.starPoint }}</p>
+        </li>
+      </ul>
+      <ul v-else>
+        <li>
+          <p class="noList">
+            매장 이용 후 첫 리뷰를 작성하면 1000 포인트를 드립니다!
+          </p>
         </li>
       </ul>
     </div>
@@ -84,5 +91,9 @@ export default {
 
 .reviewItem:last-child {
   border-bottom: none;
+}
+p.noList {
+  color: #03c75a;
+  padding: 20px;
 }
 </style>

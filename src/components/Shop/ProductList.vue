@@ -1,11 +1,9 @@
 <template>
   <!-- 유림 -->
   <div class="productArea">
-    <div class="totalProduct">
-      총 n개
-    </div>
+    <div class="totalProduct">총 {{ productList.length }}개</div>
     <div class="productList">
-      <ul>
+      <ul v-if="productList.length">
         <li
           v-for="item in productList"
           :key="item.productSeq"
@@ -14,7 +12,12 @@
         >
           <img :src="item.productImageList[0].imgPath" />
           <p>{{ item.product.productName }}</p>
-          <p>{{ item.productImageList.imgPath }}</p>
+          <p class="productDes">{{ item.product.productDes }}</p>
+        </li>
+      </ul>
+      <ul v-else>
+        <li>
+          <p class="noList">예약 가능한 항목이 없습니다.</p>
         </li>
       </ul>
     </div>
@@ -73,5 +76,12 @@ ul {
 }
 li img {
   width: 170px;
+}
+li .productDes {
+  width: 150px;
+}
+p.noList {
+  color: #03c75a;
+  padding: 20px;
 }
 </style>

@@ -9,10 +9,8 @@
           class="shopitem"
           @click="goShop(item.bizSeq)"
         >
-          <p v-for="img in item.bizImageList" :key="img.imgSeq">
-            <span v-if="img[0]">
-              <img :src="img[0].imgPath" />
-            </span>
+          <p>
+            <img :src="item.img" />
           </p>
           <!-- <img :src="item.bizImageList[0].imgPath" /> -->
           <!-- <p>{{ item.bizImageList[0].imgSeq }}</p> -->
@@ -72,5 +70,9 @@ export default {
   display: block;
   content: "";
   clear: both;
+}
+.shopList li img {
+  width: 170px;
+  height: 140px;
 }
 </style>

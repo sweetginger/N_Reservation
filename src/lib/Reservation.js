@@ -40,7 +40,20 @@ function loginAuth(obj) {
 /** 매장목록 받아오기 */
 function getShopList() {
   return axios
-    .get(`${config.baseUrl + config.biz}/bizs`)
+    .get(`${config.baseUrl + config.biz}/main`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return [];
+    });
+}
+
+/** 매장 정보 받아오기 */
+function getShop(reqSeq) {
+  return axios
+    .get(`${config.baseUrl + config.biz}/biz/${reqSeq}`)
     .then(response => {
       return response.data;
     })
@@ -117,6 +130,7 @@ export {
   getTest,
   loginAuth,
   getShopList,
+  getShop,
   getProductList,
   getReviewList,
   getOptions,
