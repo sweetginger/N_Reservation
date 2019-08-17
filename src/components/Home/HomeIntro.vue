@@ -19,7 +19,7 @@
       </button>
     </div>
     <div class="mainImg">
-      <!-- <AgileSlider></AgileSlider> -->
+      <AgileSlider></AgileSlider>
     </div>
   </div>
 </template>

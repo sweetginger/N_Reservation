@@ -2,11 +2,13 @@
   <div class="timeItemArea">
     <div class="timeArea">
       <ul class="timeList">
-        <li>10:00</li>
-        <li>12:00</li>
-        <li>14:00</li>
-        <li>16:00</li>
-        <li>18:00</li>
+        <li
+          v-for="item in timeItems"
+          :key="item.index"
+          @click="selectTime(item.time)"
+        >
+          {{ item.time }}
+        </li>
       </ul>
     </div>
   </div>
@@ -14,7 +16,27 @@
 
 <script>
 export default {
-  name: "TimeItemArea"
+  name: "TimeItemArea",
+  data: function() {
+    return {
+      timeItems: [
+        { time: "10:00" },
+        { time: "11:00" },
+        { time: "12:00" },
+        { time: "13:00" },
+        { time: "14:00" },
+        { time: "15:00" },
+        { time: "16:00" },
+        { time: "17:00" },
+        { time: "18:00" }
+      ]
+    };
+  },
+  methods: {
+    selectTime(val) {
+      this.$emit("setPickTime", val);
+    }
+  }
 };
 </script>
 

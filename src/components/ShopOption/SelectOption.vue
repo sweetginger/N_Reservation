@@ -3,10 +3,9 @@
     <div class="selectOptionList">
       <ul>
         <li class="title">날짜</li>
-        <li>{{ pickDate }}</li>
+        <li>{{ pickDate }} {{ pickTime }}</li>
       </ul>
     </div>
-    <div class="total">합계 : {{ totalValue }}</div>
   </div>
 </template>
 
@@ -17,12 +16,14 @@ export default {
     pickDate: {
       type: String,
       default: ""
+    },
+    pickTime: {
+      type: String,
+      default: ""
     }
   },
   data: function() {
-    return {
-      totalValue: 15
-    };
+    return {};
   }
 };
 </script>

@@ -1,81 +1,89 @@
 <template>
   <div class="sliderArea">
-    <agile :options="sliderOption">
-      <div v-for="n in 6" :key="n" class="slide" :class="`slide--${n}`">
-        <h3>{{ n }}</h3>
-      </div>
-      <template slot="prevButton"
-        ><i class="fas fa-chevron-left"></i
-      ></template>
-      <template slot="nextButton"
-        ><i class="fas fa-chevron-right"></i
-      ></template>
-    </agile>
+    <div id="app">
+      <agile :initial-slide="3"
+        ><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        /><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        /><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        /><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1526080676457-4544bf0ebba9?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        /><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        /><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1426170042593-200f250dfdaf?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        /><img
+          class="slide"
+          src="https://images.unsplash.com/photo-1529815481058-55e5b656f6d6?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        />
+        <template slot="prevButton"
+          ><i class="fas fa-chevron-left"></i
+        ></template>
+        <template slot="nextButton"
+          ><i class="fas fa-chevron-right"></i
+        ></template>
+      </agile>
+    </div>
   </div>
 </template>
 
 <script>
 import VueAgile from "vue-agile";
+import Vue from "vue";
+// Vue.use(VueAgile);
+Vue.component("agile", VueAgile);
 
 export default {
-  components: {
-    agile: VueAgile
-  },
-  data: function() {
-    return {
-      sliderOption: {
-        navButtons: false,
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              dots: false
-            }
-          },
-          {
-            breakpoint: 900,
-            settings: {
-              navButtons: true,
-              dots: true,
-              infinite: false
-            }
-          }
-        ]
-      }
-    };
-  }
+  // components: {
+  //   agile: VueAgile
+  // }
 };
 </script>
 
 <style scoped>
-#app {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 30px;
-}
-
-.agile__actions {
-  margin-top: 20px;
-}
 .agile__nav-button {
   background: transparent;
   border: none;
-  color: #ccc;
+  color: #fff;
   cursor: pointer;
   font-size: 24px;
+  height: 100%;
+  position: absolute;
+  top: 0;
   transition-duration: 0.3s;
+  width: 80px;
 }
 .agile__nav-button:hover {
-  color: #888;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+.agile__nav-button--prev {
+  left: 0;
+}
+.agile__nav-button--next {
+  right: 0;
+}
+.agile__dots {
+  bottom: 10px;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .agile__dot {
   margin: 0 10px;
 }
 .agile__dot button {
-  background-color: #eee;
-  border: none;
+  background-color: transparent;
+  border: 1px solid #fff;
   border-radius: 50%;
   cursor: pointer;
   display: block;
@@ -89,42 +97,14 @@ export default {
 }
 .agile__dot--current button,
 .agile__dot:hover button {
-  background-color: #888;
+  background-color: #fff;
 }
 
 .slide {
-  align-items: center;
-  color: #fff;
-  display: flex;
-  height: 300px;
-  justify-content: center;
-}
-.slide h3 {
-  font-size: 32px;
-  font-weight: 300;
-}
-
-.slide--1 {
-  background-color: #f1c40f;
-}
-
-.slide--2 {
-  background-color: #e67e22;
-}
-
-.slide--3 {
-  background-color: #e74c3c;
-}
-
-.slide--4 {
-  background-color: #9b59b6;
-}
-
-.slide--5 {
-  background-color: #3498db;
-}
-
-.slide--6 {
-  background-color: #2ecc71;
+  display: block;
+  height: 500px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
 }
 </style>
