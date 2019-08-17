@@ -13,10 +13,13 @@ import VueCarousel from "@chenfengyuan/vue-carousel";
 Vue.use(VueCarousel);
 Vue.component(VueCarousel.name, VueCarousel);
 
+/** vue agile slider */
+import VueAgile from "vue-agile";
+Vue.use(VueAgile);
+
 Vue.config.productionTip = false;
 
 new Vue({
-  VueCarousel,
   router,
   store,
   axios,
