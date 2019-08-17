@@ -116,6 +116,7 @@ function getProductList(reqSeq) {
     });
 }
 
+/** 옵션 받아오기 */
 function getOptions(productSeq) {
   return axios
     .get(`${config.baseUrl + config.option}/${productSeq}`)
