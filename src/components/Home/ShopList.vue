@@ -10,8 +10,8 @@
           @click="goShop(item.bizSeq)"
         >
           <p v-for="img in item.bizImageList" :key="img.imgSeq">
-            <span v-if="img.imgSeq == 0">
-              <img :src="img.imgPath" />
+            <span v-if="img[0]">
+              <img :src="img[0].imgPath" />
             </span>
           </p>
           <!-- <img :src="item.bizImageList[0].imgPath" /> -->

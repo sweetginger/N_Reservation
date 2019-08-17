@@ -7,7 +7,7 @@
       <router-link to="/shop">Shop</router-link>|
       <router-link to="/yurim">유림</router-link>|
       <router-link to="/joo">joo</router-link>| -->
-      <router-link to="/main">홈</router-link>
+      <router-link to="/">홈</router-link>
       <router-link to="/shop">매장뷰</router-link>
       <router-link to="/shopOption">매장옵션뷰</router-link>
       <router-link to="/myPage">마이페이지</router-link>
