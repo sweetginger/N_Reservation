@@ -5,6 +5,7 @@ import HomeView from "./views/HomeView.vue";
 import ShopView from "./views/ShopView.vue";
 import ShopOptionView from "./views/ShopOptionView.vue";
 import MyPageView from "./views/MyPageView.vue";
+import LoginView from "./views/LoginView.vue";
 
 Vue.use(Router);
 
@@ -31,6 +32,11 @@ export default new Router({
       path: "/myPage",
       name: "MyPage",
       component: MyPageView
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: LoginView
     }
   ]
 });
