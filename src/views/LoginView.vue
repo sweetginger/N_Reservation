@@ -2,10 +2,7 @@
   <div>
     <Login />
     <video autoplay="" loop name="media">
-      <source
-        src="http://localhost:8080/media/loginVideo.d59ef1d3.mp4"
-        type="video/mp4"
-      />
+      <source src="../assets/loginVideo.mp4" type="video/mp4" />
     </video>
   </div>
 </template>
