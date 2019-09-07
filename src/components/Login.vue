@@ -1,7 +1,9 @@
 <template>
   <div class="loginArea">
-    Email <input v-model="email" type="text" name="email" /><br />
-    Password <input v-model="password" type="password" name="password" />
+    Email
+    <input v-model="email" type="text" name="email" />
+    <br />Password
+    <input v-model="password" type="password" name="password" />
     <span class="loginBtn" @click="goLogin()">로그인</span>
   </div>
 </template>
@@ -16,6 +18,7 @@ export default {
       password: ""
     };
   },
+  created: function() {},
   methods: {
     /** 로그인 요청 */
     goLogin: async function() {
