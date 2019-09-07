@@ -4,7 +4,7 @@
 import axios from "axios";
 
 const config = {
-  baseUrl: "http://localhost:2902",
+  baseUrl: "http://13.124.27.73:8090",
   reservation: "",
   biz: "/biz",
   review: "/board/reviews",
